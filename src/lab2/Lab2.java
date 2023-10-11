@@ -1,14 +1,6 @@
 package lab2;
 
 public class Lab2 {
-    private  static void printMatrix(char[][] m){
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[i].length; j++) {
-                System.out.print(m[i][j] - '0' + 48 + " ");
-            }
-            System.out.println();
-        }
-    }
     public static void main(String[] args) {
         final int C5 = 1517 % 5;//C=A+B
         System.out.println("C5 = " + C5 + " /C=A+B");
@@ -56,4 +48,14 @@ public class Lab2 {
         System.out.println("Average value of matrix C = " + avg);
 
     }
+
+    private  static void printMatrix(char[][] m){
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j] - '0' + 48 + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
