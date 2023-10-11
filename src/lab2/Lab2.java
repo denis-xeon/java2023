@@ -1,6 +1,14 @@
 package lab2;
 
 public class Lab2 {
+    private  static void printMatrix(char[][] m){
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j] - '0' + 48 + " ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         final int C5 = 1517 % 5;//C=A+B
         System.out.println("C5 = " + C5 + " /C=A+B");
@@ -18,24 +26,14 @@ public class Lab2 {
         final char[][] m2 = {
                 {3, 1, 1},
                 {9, 0, 3},
-                {1, 4, 5}
+                {1, 5, 5}
         };
 
         System.out.println("matrix A:");
-        for (int i = 0; i < m1.length; i++) {
-            for (int j = 0; j < m1[i].length; j++) {
-                System.out.print(m1[i][j] - '0' + 48 + " ");
-            }
-            System.out.println();
-        }
+        printMatrix(m1);
 
         System.out.println("matrix B:");
-        for (int i = 0; i < m2.length; i++) {
-            for (int j = 0; j < m2[i].length; j++) {
-                System.out.print(m2[i][j] - '0' + 48 + " ");
-            }
-            System.out.println();
-        }
+        printMatrix(m2);
 
         char[][] m3 = new char[m1.length][m1[0].length];
 
@@ -46,12 +44,7 @@ public class Lab2 {
         }
 
         System.out.println("matrix C:");
-        for (int i = 0; i < m3.length; i++) {
-            for (int j = 0; j < m3[0].length; j++) {
-                System.out.print(m3[i][j] - '0' + " ");
-            }
-            System.out.println();
-        }
+        printMatrix(m3);
 
         float avg = 0;
         for (int i = 0; i < m3.length; i++) {
