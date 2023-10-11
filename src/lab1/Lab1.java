@@ -7,6 +7,10 @@ public class Lab1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        byte bt = -128;
+        bt --;
+        System.out.println(bt);
+
         final int C2 = 1517 % 2;//1 - "-"
         System.out.println("C2 = " + C2 + " //o1 - \"-\"");
         final int C3 = 1517 % 3;//2
@@ -54,11 +58,17 @@ public class Lab1 {
 
         float S = 0;
 
-        for (float i = a; i <= n; i++) {
-            for (float j = b; j <= m; j++) {
-                S += (i % j) / (i - C);
+        block:{
+            for (float i = a; i <= n; i++) {
+                for (float j = b; j <= m; j++) {
+                    S += (i % j) / (i - C);
+                    if(j == 2){
+                        break block;
+                    }
+                }
             }
         }
+
         System.out.println("S = " + S);
     }
 }
