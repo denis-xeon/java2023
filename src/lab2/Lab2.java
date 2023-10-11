@@ -18,7 +18,7 @@ public class Lab2 {
         final char[][] m2 = {
                 {3, 1, 1},
                 {9, 0, 3},
-                {1, 5, 5}
+                {1, 4, 5}
         };
 
         System.out.println("matrix A:");
@@ -31,7 +31,7 @@ public class Lab2 {
 
         for (int i = 0; i < m1.length; i++) {
             for (int j = 0; j < m1[0].length; j++) {
-                m3[i][j] = (char) ((m1[i][j] - '0' + 48 + m2[i][j] - '0' + 48) + '0');
+                m3[i][j] = intToChar(charToInt(m1[i][j]) + charToInt(m2[i][j]));
             }
         }
 
@@ -41,21 +41,27 @@ public class Lab2 {
         float avg = 0;
         for (int i = 0; i < m3.length; i++) {
             for (int j = 0; j < m3[0].length; j++) {
-                avg += m3[i][j] - '0';
+                avg += charToInt(m3[i][j]);
             }
         }
         avg /= (m3.length * m3[0].length);
         System.out.println("Average value of matrix C = " + avg);
 
     }
-
-    private  static void printMatrix(char[][] m){
+    private static void printMatrix(char[][] m){
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[i].length; j++) {
-                System.out.print(m[i][j] - '0' + 48 + " ");
+                System.out.print(charToInt(m[i][j]) + " ");
             }
             System.out.println();
         }
     }
 
+    private static int charToInt(char ch){
+        return ch - '0' + 48;
+    }
+
+    private static char intToChar(int i){
+        return (char) (i - 48 + '0');
+    }
 }
