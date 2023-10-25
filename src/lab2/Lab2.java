@@ -21,6 +21,11 @@ public class Lab2 {
                 {1, 4, 5}
         };
 
+        if (m1.length != m2.length || m1[0].length != m2[0].length){
+            System.out.println("Матриці мають різний розмір");
+            return;
+        }
+
         System.out.println("matrix A:");
         printMatrix(m1);
 
