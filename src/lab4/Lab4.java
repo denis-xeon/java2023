@@ -77,6 +77,10 @@ class Student {
 public class Lab4 {
 
     public static void main(String[] args) {
+
+        final int C11 = 1517 % 11;//String
+        System.out.println("C11 = " + C11 + " /Визначити клас студент, який складається як мінімум з 5-и полів.");
+
         Student[] students = {
                 new Student("Denys", 19, 87.5, "FICE", 3),
                 new Student("Ivan", 21, 90.3, "FICE", 3),
