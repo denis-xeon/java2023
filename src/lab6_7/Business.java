@@ -1,4 +1,4 @@
-package lab6;
+package lab6_7;
 
 class Business extends Car {
     public Business ( String brand, String model, double fuelConsumption, double price, double speed ) {

@@ -1,4 +1,4 @@
-package lab6;
+package lab6_7;
 
 abstract class Car {
     private String brand;
@@ -35,8 +35,20 @@ abstract class Car {
         return speed;
     }
 
+//    @Override
+//    public String toString ( ) {
+//        return String.format ( "| %-8s | %-15s | %-15s | %-17s | $%-9s | %-12s | $%-11s |", carClass, brand, model, fuelConsumption + "l/100km", price, speed + "km/h", calcCostPerKm () );
+//    }
+
     @Override
     public String toString ( ) {
-        return String.format ( "| %-8s | %-15s | %-15s | %-17s | $%-9s | %-12s | $%-11s |", carClass, brand, model, fuelConsumption + "l/100km", price, speed + "km/h", calcCostPerKm () );
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", fuelConsumption=" + fuelConsumption +
+                ", price=" + price +
+                ", speed=" + speed +
+                ", carClass='" + carClass + '\'' +
+                '}';
     }
 }

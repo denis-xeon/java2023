@@ -1,4 +1,4 @@
-package lab6;
+package lab6_7;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -25,6 +25,14 @@ class TaxiPark {
         cars.sort ( Comparator.comparingDouble ( Car::getFuelConsumption ) );
     }
 
+    private double calcAvg(ArrayList < Double > prices){
+        double counter = 0;
+        for ( double value : prices ){
+            counter += value;
+        }
+        return (double)Math.round ( (counter / prices.size()) * 100) / 100;
+    }
+
     public void avgCost(){
         System.out.println ( "Average price for km" );
         ArrayList < Double > economPrices = new ArrayList <> ( );
@@ -44,40 +52,16 @@ class TaxiPark {
                     break;
                 default:
                     businessPrices.add ( car.calcCostPerKm ( ) );
+                    break;
             }
         }
 
-        double econom = 0;
-        for ( double value : economPrices ){
-            econom += value;
-        }
-        if (econom != 0){
-            System.out.println ("Econom class: $" + (double)Math.round ( (econom / economPrices.size()) * 100) / 100);
-        }
 
-        double comfort = 0;
-        for ( double value : comfortPrices ){
-            comfort += value;
-        }
-        if (comfort != 0){
-            System.out.println ("Comfort class: $" + (double)Math.round ( (comfort / comfortPrices.size()) * 100) / 100);
-        }
+        System.out.println ("Econom class: $" + calcAvg ( economPrices ));
+        System.out.println ("Comfort class: $" + calcAvg ( comfortPrices ));
+        System.out.println ("Van class: $" + calcAvg ( vanPrices ));
+        System.out.println ("Business class: $" + calcAvg ( businessPrices ));
 
-        double van = 0;
-        for ( double value : vanPrices ){
-            van += value;
-        }
-        if (van != 0){
-            System.out.println ("Van class: $" + (double)Math.round ( (van / vanPrices.size()) * 100) / 100);
-        }
-
-        double business = 0;
-        for ( double value : businessPrices ){
-            business += value;
-        }
-        if(business != 0){
-            System.out.println ("Business class: $" + (double)Math.round ( (business / businessPrices.size()) * 100) / 100);
-        }
 
     }
 
