@@ -1,7 +1,7 @@
 package lab6_7;
 
 class Van extends Car {
-    public Van ( String brand, String model, double fuelConsumption, double price, double speed ) {
+    public Van ( String brand, String model, double fuelConsumption, double price, double speed ) throws CarException {
         super ( brand, model, fuelConsumption, price, speed, "Van" );
     }
 

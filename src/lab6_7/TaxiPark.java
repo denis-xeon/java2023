@@ -9,7 +9,10 @@ class TaxiPark {
     private List < Car > cars = new ArrayList <> ( );
     private Random random = new Random ( );
 
-    public void addCar ( Car car ) {
+    public void addCar ( Car car ) throws CarException {
+        if (car == null) {
+            throw new CarException ("Car cannot be null");
+        }
         cars.add ( car );
     }
 
@@ -79,7 +82,7 @@ class TaxiPark {
         return cars;
     }
 
-    public Car generateRandomCar ( ) {
+    public Car generateRandomCar ( ) throws CarException {
         String[] carClasses = {"Econom", "Comfort", "Van", "Business"};
         String selectedCarClass = carClasses[random.nextInt ( carClasses.length )];
 
@@ -244,7 +247,7 @@ class TaxiPark {
         return models[random.nextInt ( models.length )];
     }
 
-    private Car createCar ( String carClass, String brand, String model, double fuelConsumption, double price, double speed ) {
+    private Car createCar ( String carClass, String brand, String model, double fuelConsumption, double price, double speed ) throws CarException {
         switch ( carClass ) {
             case "Econom":
                 return new Econom ( brand, model, fuelConsumption, price, speed );
@@ -255,7 +258,7 @@ class TaxiPark {
             case "Business":
                 return new Business ( brand, model, fuelConsumption, price, speed );
             default:
-                throw new IllegalArgumentException ( "Invalid car class: " + carClass );
+                throw new CarException ( "Invalid car class: " + carClass );
         }
     }
 }

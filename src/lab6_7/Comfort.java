@@ -1,7 +1,7 @@
 package lab6_7;
 
 class Comfort extends Car {
-    public Comfort ( String brand, String model, double fuelConsumption, double price, double speed ) {
+    public Comfort ( String brand, String model, double fuelConsumption, double price, double speed ) throws CarException {
         super ( brand, model, fuelConsumption, price, speed, "Comfort" );
     }
 
